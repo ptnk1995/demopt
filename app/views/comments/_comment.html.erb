@@ -1,0 +1,18 @@
+<hr>
+<%= render 'comments/form' %>
+
+<% @comments.each do |comment| -%>
+  <table>
+  <tr>
+    <td width="200px"><%= link_to comment.user.name, comment.user %></td>
+    <td >
+       <span style="margin-left:20px"> <%= comment.content %></span>
+    </td>
+  </tr>
+
+</table>
+     <p style="margin-left:180px"><%= time_ago_in_words(comment.created_at) %> ago</p>
+    <br />
+
+<% end %>
+
